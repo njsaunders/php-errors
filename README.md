@@ -1,4 +1,4 @@
-#php-errors
+# php-errors
 
 This repository contains the smallest possible testcase used for demonstrating getting errors into Cloudwatch logs
 
