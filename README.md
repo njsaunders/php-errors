@@ -46,13 +46,13 @@ There are two scripts - error.php (That throws an error) and phpinfo.php, which 
 SCRIPT_FILENAME=/phpinfo.php \
 REQUEST_METHOD=GET \
 cgi-fcgi -bind -connect 127.0.0.1:9000
-````
+```
 
 ```SCRIPT_NAME=/error.php \
 SCRIPT_FILENAME=/error.php \
 REQUEST_METHOD=GET \
 cgi-fcgi -bind -connect 127.0.0.1:9000
-````
+```
 
 To get a terminal on the instance first find the name of the container:
 
