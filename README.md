@@ -65,7 +65,7 @@ REQUEST_METHOD=GET \
 cgi-fcgi -bind -connect 127.0.0.1:9000
 ```
 
-To get a terminal on the instance first find the name of the container:
+To get an interactive terminal in the container first find its name:
 
 ```docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
