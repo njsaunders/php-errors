@@ -1,6 +1,13 @@
+#php-errors
+
 This repository contains the smallest possible testcase used for demonstrating getting errors into Cloudwatch logs
 
-1. Build the docker file
+1. Install fcgi on your local machine
+```
+brew install fcgi
+```
+
+2. Build the docker file
 
 ```
 docker build --no-cache .
@@ -35,14 +42,9 @@ Removing intermediate container 2e0ac151abf9
 Successfully built d496c6db0332
 ```
 
-2. Run it, exposing port 9000
+3. Run it, exposing port 9000
 ```
 docker run -p 9000:9000 d496c6db0332
-```
-
-3. Install fcgi
-```
-brew install fcgi
 ```
 
 4. Test 
