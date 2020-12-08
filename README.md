@@ -1,7 +1,9 @@
 This repository contains the smallest possible testcase used for demonstrating getting errors into Cloudwatch logs
 
 1. Build the docker file
-```docker build --no-cache .
+
+```
+docker build --no-cache .
 
 Sending build context to Docker daemon  45.06kB
 Step 1/6 : FROM php:7.3-fpm-alpine
@@ -30,25 +32,32 @@ Step 6/6 : CMD ["php-fpm", "-F"]
  ---> Running in 2e0ac151abf9
 Removing intermediate container 2e0ac151abf9
  ---> d496c6db0332
-Successfully built d496c6db0332```
+Successfully built d496c6db0332
+```
 
 2. Run it, exposing port 9000
-```docker run -p 9000:9000 d496c6db0332```
+```
+docker run -p 9000:9000 d496c6db0332
+```
 
 3. Install fcgi
-```brew install fcgi```
+```
+brew install fcgi
+```
 
 4. Test 
 
 There are two scripts - error.php (That throws an error) and phpinfo.php, which calls the phpinfo() function
 
-```SCRIPT_NAME=/phpinfo.php \
+```
+SCRIPT_NAME=/phpinfo.php \
 SCRIPT_FILENAME=/phpinfo.php \
 REQUEST_METHOD=GET \
 cgi-fcgi -bind -connect 127.0.0.1:9000
 ```
 
-```SCRIPT_NAME=/error.php \
+```
+SCRIPT_NAME=/error.php \
 SCRIPT_FILENAME=/error.php \
 REQUEST_METHOD=GET \
 cgi-fcgi -bind -connect 127.0.0.1:9000
@@ -58,7 +67,8 @@ To get a terminal on the instance first find the name of the container:
 
 ```docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-cd39bb6b12be        d496c6db0332        "docker-php-entrypoi…"   3 seconds ago       Up 1 second         0.0.0.0:9000->9000/tcp   gracious_kepler```
+cd39bb6b12be        d496c6db0332        "docker-php-entrypoi…"   3 seconds ago       Up 1 second         0.0.0.0:9000->9000/tcp   gracious_kepler
+```
 
 Then exec a bash shell:
 
