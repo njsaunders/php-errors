@@ -1,6 +1,6 @@
 # php-errors
 
-This repository contains the smallest possible testcase used for demonstrating getting errors into Cloudwatch logs
+This repository contains the smallest possible testcase used for demonstrating getting php errors raised through the docker logs driver
 
 1. Install fcgi on your local machine
 ```
